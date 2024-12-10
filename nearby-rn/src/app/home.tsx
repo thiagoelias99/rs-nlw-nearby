@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { StyleSheet, Text, View, Alert } from 'react-native'
 
 import { api } from "@/services/api"
+import { Categories, CategoriesProps } from "@/components/categories"
 
 export default function Home() {
-  const [categories, setCategories] = useState([])
+  const [categories, setCategories] = useState<CategoriesProps>([])
   const [category, setCategory] = useState("")
 
   useEffect(() => {
@@ -24,7 +25,11 @@ export default function Home() {
 
   return (
     <View>
-      <Text>Home</Text>
+      <Categories
+        data={categories}
+        onSelect={setCategory}
+        selected={category}
+      />
     </View>
   )
 }
