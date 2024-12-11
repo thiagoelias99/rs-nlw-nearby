@@ -26,6 +26,7 @@ export function Places({ data }: Props) {
       handleIndicatorStyle={styles.indicator}
       backgroundStyle={styles.container}
       enableOverDrag={false}
+      enableDynamicSizing={false}
     >
       <BottomSheetFlatList
         data={data}
